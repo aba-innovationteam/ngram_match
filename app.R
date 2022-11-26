@@ -1,6 +1,6 @@
 #' ---
 #' title: 'Task 06: Data Product'
-#' author: "Mark Blackmore"
+#' author: "Alejandro Abraham"
 #' date: "`r format(Sys.Date())`"
 #' output: github_document
 #' ---
@@ -10,6 +10,9 @@
 #' and outputs the a predicted next word. 
 
 library(shiny)
+library(bslib)
+
+
 suppressPackageStartupMessages({
    library(tidyverse)
    library(stringr)
@@ -20,6 +23,7 @@ source("ngram.R")
 
 #' Define UI for application that draws a histogram
 ui <- fluidPage(
+    theme = bslib::bs_theme(version = 5, 'materia'),
    
    # Application title
    titlePanel("Text Prediction Model"),
@@ -35,7 +39,7 @@ ui <- fluidPage(
         h5("4. A question mark means no prediction, typically due to mis-spelling"),
         h5("5. Additional tabs show plots of the top ngrams in the dataset"),
         br(),
-        a("Source Code", href = "https://github.com/mark-blackmore/JHU-Data-Science-Capstone/tree/master/ngram_match")
+        a("Source Code", href = "https://github.com/aba-innovationteam/ngram_match")
       ),
       
       # Show a plot of the generated distribution
